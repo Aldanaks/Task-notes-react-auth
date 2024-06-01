@@ -1,12 +1,13 @@
 import { useMutation } from "@tanstack/react-query";
 import React, { useState } from "react";
+import { register } from "../api/auth";
 
 const Register = () => {
   const [userInfo, setUserInfo] = useState({});
 
   const { mutate } = useMutation({
     mutationKey: ["register"],
-    mutationFn: () => Register(userInfo),
+    mutationFn: () => register(userInfo),
   });
 
   const handleChange = (e) => {
